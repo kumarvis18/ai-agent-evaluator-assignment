@@ -14,7 +14,7 @@ from .models import (
     ALLOWED_QUALITY_SCORES,
     ALLOWED_SPLITS,
     ALLOWED_VERDICTS,
-    Case,
+    BenchmarkCase,
 )
 
 
@@ -33,8 +33,8 @@ class _RowError(Exception):
     """Internal: a single row failed to parse. Message is human-readable."""
 
 
-def load_cases(path: str | Path) -> list[Case]:
-    """Read and validate the benchmark CSV, returning fully normalized Case objects.
+def load_cases(path: str | Path) -> list[BenchmarkCase]:
+    """Read and validate the benchmark CSV, returning fully normalized BenchmarkCase objects.
 
     Raises ValidationError (with every issue listed) if any row is invalid or
     any case_id is duplicated. Never returns a partial/silently-filtered list.
@@ -43,7 +43,7 @@ def load_cases(path: str | Path) -> list[Case]:
 
     issues: list[str] = []
     seen_ids: set[str] = set()
-    cases: list[Case] = []
+    cases: list[BenchmarkCase] = []
 
     for row_number, row in enumerate(rows, start=2):  # header is line 1
         case_id = (row.get("case_id") or "").strip()
@@ -75,7 +75,7 @@ def _read_csv(path: str | Path) -> list[dict[str, str]]:
         return list(csv.DictReader(stream))
 
 
-def _parse_row(row_number: int, case_id: str, row: dict[str, str]) -> Case:
+def _parse_row(row_number: int, case_id: str, row: dict[str, str]) -> BenchmarkCase:
     split = (row.get("split") or "").strip()
     if split not in ALLOWED_SPLITS:
         raise _RowError(
@@ -122,7 +122,7 @@ def _parse_row(row_number: int, case_id: str, row: dict[str, str]) -> Case:
         row.get("gold_policy_violation") or "",
     )
 
-    return Case(
+    return BenchmarkCase(
         case_id=case_id,
         split=split,
         capability=(row.get("capability") or "").strip(),

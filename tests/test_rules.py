@@ -61,13 +61,20 @@ def test_case_id_is_preserved_in_the_result():
 
 def test_evaluator_matches_gold_labels_for_all_calibration_cases():
     """Regression test: locks in the 12/12 calibration accuracy the rules were tuned against."""
-    calibration_cases = [c for c in load_cases("datasets/ai_agent_evaluator_benchmark.csv") if c.split == "calibration"]
+    calibration_cases = [
+        c
+        for c in load_cases("datasets/ai_agent_evaluator_benchmark.csv")
+        if c.split == "calibration"
+    ]
     assert len(calibration_cases) == 12
 
     mismatches = []
     for case in calibration_cases:
         result = evaluate_case(case.to_input())
-        if result.verdict != case.gold_verdict or result.policy_violation != case.gold_policy_violation:
+        if (
+            result.verdict != case.gold_verdict
+            or result.policy_violation != case.gold_policy_violation
+        ):
             mismatches.append((case.case_id, result.verdict, case.gold_verdict))
 
     assert not mismatches, f"Calibration mismatches: {mismatches}"

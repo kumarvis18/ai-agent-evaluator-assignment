@@ -49,11 +49,11 @@ reasoning" weighting), it needs no API key (the assignment requires the app to
 run without one), and it's fully reproducible — the same input always produces
 the same output, which made an automated regression test possible.
 
-**Data model separates what the evaluator is allowed to see.** `Case` (full row,
-including gold labels) and `EvaluationInput` (same fields minus all `gold_*`
-fields) are distinct dataclasses. `Case.to_input()` strips the gold labels before
-the evaluator ever touches them — gold-label leakage is a type error, not
-something you have to remember not to do.
+**Data model separates what the evaluator is allowed to see.** `BenchmarkCase`
+(full row, including gold labels) and `EvaluationInput` (same fields minus all
+`gold_*` fields) are distinct dataclasses. `BenchmarkCase.to_input()` strips the
+gold labels before the evaluator ever touches them — gold-label leakage is a
+type error, not something you have to remember not to do.
 
 **Loader collects every validation issue before failing**, rather than stopping
 at the first bad row or silently dropping rows — validates `case_id`
@@ -145,7 +145,7 @@ exception.
 
 ```
 src/evaluator/
-  models.py    EvaluationInput / Case / EvaluationResult dataclasses
+  models.py    EvaluationInput / BenchmarkCase / EvaluationResult dataclasses
   loader.py    CSV loading + validation
   rules.py     the 6 deterministic checks + severity-tier combine logic
   metrics.py   accuracy / macro F1 / confusion matrix / precision-recall / MAE

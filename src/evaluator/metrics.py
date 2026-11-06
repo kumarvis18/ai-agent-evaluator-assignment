@@ -24,12 +24,22 @@ def confusion_matrix(golds: list[str], preds: list[str]) -> dict[str, dict[str, 
     return matrix
 
 
-def _precision_recall_f1(golds: list[str], preds: list[str], label: str) -> tuple[float, float, float]:
+def _precision_recall_f1(
+    golds: list[str], preds: list[str], label: str
+) -> tuple[float, float, float]:
     true_positive = sum(g == label and p == label for g, p in zip(golds, preds))
     false_positive = sum(g != label and p == label for g, p in zip(golds, preds))
     false_negative = sum(g == label and p != label for g, p in zip(golds, preds))
-    precision = true_positive / (true_positive + false_positive) if (true_positive + false_positive) else 0.0
-    recall = true_positive / (true_positive + false_negative) if (true_positive + false_negative) else 0.0
+    precision = (
+        true_positive / (true_positive + false_positive)
+        if (true_positive + false_positive)
+        else 0.0
+    )
+    recall = (
+        true_positive / (true_positive + false_negative)
+        if (true_positive + false_negative)
+        else 0.0
+    )
     f1 = 2 * precision * recall / (precision + recall) if (precision + recall) else 0.0
     return precision, recall, f1
 
@@ -39,12 +49,22 @@ def macro_f1(golds: list[str], preds: list[str]) -> float:
     return sum(per_label_f1) / len(per_label_f1)
 
 
-def policy_violation_precision_recall(golds: list[bool], preds: list[bool]) -> tuple[float, float]:
+def policy_violation_precision_recall(
+    golds: list[bool], preds: list[bool]
+) -> tuple[float, float]:
     true_positive = sum(g and p for g, p in zip(golds, preds))
     false_positive = sum((not g) and p for g, p in zip(golds, preds))
     false_negative = sum(g and (not p) for g, p in zip(golds, preds))
-    precision = true_positive / (true_positive + false_positive) if (true_positive + false_positive) else 0.0
-    recall = true_positive / (true_positive + false_negative) if (true_positive + false_negative) else 0.0
+    precision = (
+        true_positive / (true_positive + false_positive)
+        if (true_positive + false_positive)
+        else 0.0
+    )
+    recall = (
+        true_positive / (true_positive + false_negative)
+        if (true_positive + false_negative)
+        else 0.0
+    )
     return precision, recall
 
 
@@ -56,7 +76,11 @@ def mean_absolute_error(golds: list[int], preds: list[int]) -> float:
 
 def build_report(cases_by_id: dict, predictions: list[dict]) -> str:
     """Build the Markdown evaluation report for the README's required metrics."""
-    matched = [(cases_by_id[p["case_id"]], p) for p in predictions if p["case_id"] in cases_by_id]
+    matched = [
+        (cases_by_id[p["case_id"]], p)
+        for p in predictions
+        if p["case_id"] in cases_by_id
+    ]
     unmatched = [p for p in predictions if p["case_id"] not in cases_by_id]
 
     gold_verdicts = [case.gold_verdict for case, _ in matched]
@@ -69,13 +93,16 @@ def build_report(cases_by_id: dict, predictions: list[dict]) -> str:
     acc = accuracy(gold_verdicts, pred_verdicts)
     f1 = macro_f1(gold_verdicts, pred_verdicts)
     matrix = confusion_matrix(gold_verdicts, pred_verdicts)
-    policy_precision, policy_recall = policy_violation_precision_recall(gold_policy, pred_policy)
+    policy_precision, policy_recall = policy_violation_precision_recall(
+        gold_policy, pred_policy
+    )
     quality_mae = mean_absolute_error(gold_quality, pred_quality)
 
     errors = [
         (case, pred)
         for case, pred in matched
-        if pred["verdict"] != case.gold_verdict or pred["policy_violation"] != case.gold_policy_violation
+        if pred["verdict"] != case.gold_verdict
+        or pred["policy_violation"] != case.gold_policy_violation
     ]
 
     lines = ["# Evaluation Report", ""]
@@ -118,7 +145,9 @@ def build_report(cases_by_id: dict, predictions: list[dict]) -> str:
         lines.append("No mismatches between predictions and gold labels.")
     else:
         for case, pred in errors[:5]:
-            lines.append(f"**{case.case_id}** — predicted `{pred['verdict']}`, gold `{case.gold_verdict}`")
+            lines.append(
+                f"**{case.case_id}** — predicted `{pred['verdict']}`, gold `{case.gold_verdict}`"
+            )
             lines.append(f"  - Evaluator reason: {pred['reason']}")
             lines.append(f"  - Gold rationale: {case.gold_rationale}")
             lines.append("")

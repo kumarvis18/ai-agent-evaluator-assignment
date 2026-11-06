@@ -81,20 +81,28 @@ def _cmd_report(args: argparse.Namespace) -> int:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="evaluator", description="AI agent response evaluator")
+    parser = argparse.ArgumentParser(
+        prog="evaluator", description="AI agent response evaluator"
+    )
     subparsers = parser.add_subparsers(dest="command", required=True)
 
-    validate_parser = subparsers.add_parser("validate", help="Validate and summarize a CSV dataset")
+    validate_parser = subparsers.add_parser(
+        "validate", help="Validate and summarize a CSV dataset"
+    )
     validate_parser.add_argument("csv_path")
     validate_parser.set_defaults(func=_cmd_validate)
 
-    run_parser = subparsers.add_parser("run", help="Evaluate cases and write predictions")
+    run_parser = subparsers.add_parser(
+        "run", help="Evaluate cases and write predictions"
+    )
     run_parser.add_argument("--input", required=True)
     run_parser.add_argument("--split", choices=["calibration", "test"], default=None)
     run_parser.add_argument("--output", required=True)
     run_parser.set_defaults(func=_cmd_run)
 
-    report_parser = subparsers.add_parser("report", help="Compare predictions to gold labels")
+    report_parser = subparsers.add_parser(
+        "report", help="Compare predictions to gold labels"
+    )
     report_parser.add_argument("--input", required=True)
     report_parser.add_argument("--predictions", required=True)
     report_parser.add_argument("--output", required=True)

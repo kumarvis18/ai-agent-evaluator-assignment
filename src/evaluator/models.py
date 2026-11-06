@@ -25,7 +25,7 @@ class EvaluationInput:
 
 
 @dataclass(frozen=True)
-class Case:
+class BenchmarkCase:
     """A fully validated and normalized dataset row, including gold labels used for scoring."""
 
     case_id: str
