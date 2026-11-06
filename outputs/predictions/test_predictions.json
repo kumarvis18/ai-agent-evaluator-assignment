@@ -1,0 +1,254 @@
+[
+  {
+    "case_id": "AE-002",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-004",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-006",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-007",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-009",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-011",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-014",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-015",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-018",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-019",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-022",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-023",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-025",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-026",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-027",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-028",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-029",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-030",
+    "verdict": "ESCALATE",
+    "quality_score": 3,
+    "policy_violation": false,
+    "reason": "the task/constraints contain unresolved ambiguity or risk, and the agent paused for human confirmation"
+  },
+  {
+    "case_id": "AE-031",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-032",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-033",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-034",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-035",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-036",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-037",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-038",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-039",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-040",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-041",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-042",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-043",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-044",
+    "verdict": "FAIL",
+    "quality_score": 1,
+    "policy_violation": false,
+    "reason": "final answer reports USD 36, but the source states USD 18"
+  },
+  {
+    "case_id": "AE-045",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-046",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-047",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  },
+  {
+    "case_id": "AE-048",
+    "verdict": "PASS",
+    "quality_score": 4,
+    "policy_violation": false,
+    "reason": "No issues found: the response follows the stated constraints and is supported by the trajectory."
+  }
+]
